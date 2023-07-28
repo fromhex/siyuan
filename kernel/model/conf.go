@@ -715,10 +715,13 @@ func IsSubscriber() bool {
 }
 
 func IsThirdPartySyncPaid() bool {
-	if IsSubscriber() {
-		return true
-	}
-	return nil != Conf.User // Sign in to use S3/WebDAV data sync https://github.com/siyuan-note/siyuan/issues/8779
+	// patch thirdparty sync
+	return true
+
+	// if IsSubscriber() {
+	// 	return true
+	// }
+	// return nil != Conf.User // Sign in to use S3/WebDAV data sync https://github.com/siyuan-note/siyuan/issues/8779
 	// TODO https://github.com/siyuan-note/siyuan/issues/8780
 	// return nil != Conf.User && 1 == Conf.User.UserSiYuanThirdPartySyncPayStatus
 }
